@@ -1,0 +1,36 @@
+echo "========= Addition operator ==========="
+echo 12 + 42
+echo 12 - 42
+echo 10 * 2
+echo 10 % 2
+echo "Q" + "Q"
+echo [1,2] + [3,4]
+echo "======================================="
+
+echo "========= Comparison operations ==========="
+true != false
+"equal" == "equal"
+
+echo "foo" != "bar"
+if 12 != 42 {
+  echo "true"
+}else {
+  echo "false"
+}
+echo "======================================="
+
+echo "========= Logical operations ==========="
+echo 18 >= 12 and not false
+echo "======================================="
+
+echo "========= Shorthand operator ==========="
+let age = 28
+age += 5 
+echo age
+echo "======================================="
+
+echo "========= Text interpolation ==========="
+let name = "Q"
+let age = 27
+echo "Hi, I'm {name}. I'm {age} years old."
+echo "======================================="
