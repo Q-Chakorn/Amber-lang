@@ -1,0 +1,12 @@
+let dockerfile = "/Users/ikkyusan/Desktop/bookinfo/ratings/Dockerfile"
+let search_pattern = "FROM node:latest"
+let replace_pattern = "FROM node:alpine"
+let search_pattern1 = "EXPOSE 8080"
+let replace_pattern1 = "EXPOSE 8443"
+
+$sed -i -e "s/{search_pattern}/{replace_pattern}/g" {dockerfile}$ failed{
+  echo "Cant updated"
+}
+$sed -i -e "s/{search_pattern1}/{replace_pattern1}/g" {dockerfile}$ failed{
+  echo "Cant updated"
+}
