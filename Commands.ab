@@ -1,0 +1,54 @@
+echo "========= Command statement ==========="
+$cp conditions.ab cptest.ab$ failed{
+  echo "cant do"
+}
+echo "=============================="
+echo "========= Command expression ==========="
+let readfile = $cat cptest.ab$ failed{
+  echo "cant do"
+}
+echo readfile
+
+let filePath = "./"
+$ls {filePath}$ failed{
+  echo "Could not list '{filePath}'"
+}
+echo "=============================="
+echo "========= Getting the exit code ==========="
+let filePath = "./"
+$ls {filePath}$ failed {
+    echo "Error! Exit code: {status}"
+}
+echo "The status code is: {status}"
+echo "=============================="
+echo "========= Command Modifiers ==========="
+let isReady = false
+// unsafe รันไปไม่สนคำสั่งที่ล้มเหลว หรือไม่ตรงตามเงื่อนไข
+// silent รันคำสั่งภายในบล็อกโดยไม่แสดงผลลัพธ์
+unsafe{
+  $ls ./$
+  if isReady {
+    $ls ./$
+  }
+  $ls ./$  
+}
+silent{
+  $cat cptest.ab$ failed{
+    echo "cant do"
+  }
+}
+
+silent unsafe{
+  $ls ./$
+  if isReady {
+    $ls ./$
+  }
+  $ls ./$  
+}
+echo "=============================="
+let delfile = "./cptest.ab"
+unsafe{
+  $rm {delfile}$
+  echo "done"
+}
+
