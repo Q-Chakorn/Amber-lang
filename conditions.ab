@@ -1,0 +1,43 @@
+echo "========= if stage ==========="
+let age = 28
+if age >= 16 {
+  echo "welcome"
+}else{
+  echo "not allowed"
+}
+// or 
+if age >= 16: echo "welcome"
+else: echo "not allowed"
+echo "=============================="
+
+echo "========= if chain ==========="
+let drink = "water"
+if{
+  drink == "water"{
+    echo "Have a natural, mineralized water"
+  }
+  drink == "cola"{
+    echo "Here is your fresh cola"
+  }else{
+    echo "Sorry, we have none of that"
+  }
+}
+// or 
+if {
+    drink == "water": echo "Have a natural, mineralized water"
+    drink == "cola": echo "Here is your fresh cola"
+    else: echo "Sorry, we have none of that"
+}
+// or
+if drink == "water"{
+  echo "Have a natural, mineralized water"
+}else{
+  if drink == "cola"{
+    echo "Here is your fresh cola"
+  }else{
+    echo "Sorry, we have none of that"
+  }
+}
+echo "=============================="
+
+
